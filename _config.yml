@@ -1,0 +1,19 @@
+theme: jekyll-theme-minimal
+
+title: Devops World
+description: A DevOps repository
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Site configuration
+show_downloads: true
+google_analytics: 
+
+# Exclude files from build
+exclude:
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - README.md
