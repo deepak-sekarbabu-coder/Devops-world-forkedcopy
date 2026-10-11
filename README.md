@@ -1,6 +1,6 @@
 # HAPPY LEARNING 📌
 
-<img width="1024" height="1536" alt="DevOps RoadMap" src="https://github.com/veriqta/DEVOPS-WORLD/blob/main/00.%20%20ARCHIVE%20RESOURCES/01.%20Legacy%20Resources/devops-world%20map.png" />
+<img width="1024" height="1536" alt="DevOps RoadMap" src="00.%20%20ARCHIVE%20RESOURCES/01.%20Legacy%20Resources/devops-world%20map.png" />
 
 
 # DEVOPS-WORLD
@@ -121,6 +121,37 @@ Ask these questions while you learn:
 - What evidence would reveal the failure?
 - How would I contain, recover from, and prevent it?
 - Would this approach be safe and maintainable in production?
+
+## Browse locally with MkDocs
+
+The whole repository is readable in a browser as a documentation site.
+
+```bash
+pip install mkdocs
+
+# mkdocs refuses docs_dir == config dir, so keep the config outside the repo
+# and point it at a junction of the repo itself (no copy, edits reload live)
+mkdir -p /tmp/devopsworld-site
+ln -s "$PWD" /tmp/devopsworld-site/content     # Windows: mklink /J content "%CD%"
+
+cd /tmp/devopsworld-site
+cat > mkdocs.yml <<'EOF'
+site_name: DevOps World
+docs_dir: content
+site_dir: site
+exclude_docs: |
+  .git/
+  site/
+EOF
+
+python -m mkdocs serve -a localhost:8000
+```
+
+Then open **http://127.0.0.1:8000/**. Stop with `Ctrl+C`; edit any `.md` and the page
+rebuilds on save.
+
+Port: **8000**. Change it with `-a localhost:9000` (or any free port). To serve a
+built copy instead of the live-reload dev server: `python -m mkdocs build -d site`.
 
 ## Contributing
 
