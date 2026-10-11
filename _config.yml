@@ -10,7 +10,10 @@ plugins:
 
 # Site configuration
 show_downloads: true
-google_analytics: 
+
+# Liquid configuration - prevent processing of template syntax in code blocks
+liquid:
+  error_mode: strict
 
 # Exclude files from build
 exclude:
