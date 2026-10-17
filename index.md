@@ -1,32 +1,13 @@
----
-layout: default
-title: Devops World
----
+# DEVOPS-WORLD
 
-# Devops World
+A structured, production-focused learning hub for DevOps and modern infrastructure engineering:
+Linux, networking, Git, Bash, Python, cloud, Docker, Kubernetes, Terraform, Ansible, CI/CD,
+observability, and security.
 
-Welcome to the GitHub Pages site for the DevOps repository.
+- **Learning resources** — fundamentals first: computers, Linux, networking, Git, shell, YAML and JSON, Python.
+- **A complete beginner's guide to all tools** — one tool at a time, from first principles to production.
+- **Projects** — hands-on builds with verification, failure testing, and cleanup.
+- **Interviews** — junior, mid-level, and senior questions, scenarios, and system design.
 
-This project contains Python-based DevOps resources, automation scripts, and infrastructure-related examples.
-
-## Highlights
-
-- Python-based tooling and utilities
-- DevOps automation examples
-- Infrastructure and deployment scripts
-- Documentation and project resources
-
-## Repository
-
-- GitHub: https://github.com/deepak-sekarbabu-coder/Devops-world-forkedcopy
-
-## Getting Started
-
-1. Clone the repository
-2. Review the source files
-3. Explore the automation and infrastructure scripts
-4. Use the code as a starting point for your DevOps workflows
-
----
-
-This page is powered by GitHub Pages and Jekyll.
+Every guide follows the same loop: learn the concept, build it, verify it, break it, troubleshoot
+with evidence, and explain what would change in production.

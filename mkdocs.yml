@@ -2,6 +2,5 @@ site_name: DevOps World
 docs_dir: .
 site_dir: site
 exclude_docs: |
-  .git/
   mkdocs.yml
-  site/
+  /README.md

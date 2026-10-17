@@ -128,30 +128,12 @@ The whole repository is readable in a browser as a documentation site.
 
 ```bash
 pip install mkdocs
-
-# mkdocs refuses docs_dir == config dir, so keep the config outside the repo
-# and point it at a junction of the repo itself (no copy, edits reload live)
-mkdir -p /tmp/devopsworld-site
-ln -s "$PWD" /tmp/devopsworld-site/content     # Windows: mklink /J content "%CD%"
-
-cd /tmp/devopsworld-site
-cat > mkdocs.yml <<'EOF'
-site_name: DevOps World
-docs_dir: content
-site_dir: site
-exclude_docs: |
-  .git/
-  site/
-EOF
-
-python -m mkdocs serve -a localhost:8000
+python serve.py
 ```
 
 Then open **http://127.0.0.1:8000/**. Stop with `Ctrl+C`; edit any `.md` and the page
-rebuilds on save.
-
-Port: **8000**. Change it with `-a localhost:9000` (or any free port). To serve a
-built copy instead of the live-reload dev server: `python -m mkdocs build -d site`.
+rebuilds on save. Change the port in [serve.py](serve.py). GitHub Pages builds and
+deploys the site on every push to `main`.
 
 ## Contributing
 
@@ -175,13 +157,6 @@ Do not open a public issue for a security vulnerability or accidentally exposed 
 ## Support
 
 For learning questions, bug reports, and repository help, see [SUPPORT.md](SUPPORT.md). Please use the correct issue template so maintainers have enough information to respond.
-
-## Project policies
-
-- [Contribution guide](CONTRIBUTING.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Security policy](SECURITY.md)
-- [Support guide](SUPPORT.md)
 
 ## About VERIQTA
 

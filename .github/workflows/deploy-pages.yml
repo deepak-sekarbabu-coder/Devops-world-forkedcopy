@@ -35,6 +35,9 @@ jobs:
         # from a temp config that points docs_dir at the absolute workspace.
         # site_dir stays relative, so output lands in $RUNNER_TEMP/site,
         # outside docs_dir.
+        #
+        # --strict makes link warnings build failures, so a broken internal
+        # link fails CI instead of shipping. Fix the link; don't remove the flag.
         run: |
           python - <<'PY'
           import os
@@ -46,7 +49,7 @@ jobs:
           out = Path(os.environ["RUNNER_TEMP"]) / "mkdocs-ci.yml"
           out.write_text(src, encoding="utf-8")
           PY
-          python -m mkdocs build -f "$RUNNER_TEMP/mkdocs-ci.yml"
+          python -m mkdocs build --strict -f "$RUNNER_TEMP/mkdocs-ci.yml"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
